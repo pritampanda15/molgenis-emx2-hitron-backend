@@ -367,7 +367,7 @@ export const getNameOfHead = (head) => {
 
   return name !== "" ? name.trim() : undefined;
 };
-         
+
 export const mapHeadInfo = (instance) => {
   if (instance.head) {
     return {
@@ -391,7 +391,7 @@ export const mapHeadInfo = (instance) => {
     return {};
   }
 };
-                
+
 export const mapContactInfo = (instance) => {
   if (instance.contact) {
     return {

@@ -57,7 +57,8 @@
             <a
               class="text-body-base text-footer-link hover:underline"
               href="http://molgenis.org"
-              >MOLGENIS.org</a>
+              >MOLGENIS.org</a
+            >
             (<a
               class="text-body-base text-footer-link hover:underline"
               href="http://github.com/molgenis/molgenis-emx2"
@@ -68,11 +69,11 @@
           <div class="mb-0 text-center lg:pb-5 text-title text-body-lg">
             Please cite
             <a
-                class="text-body-base text-footer-link hover:underline"
-                href="https://www.ncbi.nlm.nih.gov/pubmed/36463884"
+              class="text-body-base text-footer-link hover:underline"
+              href="https://www.ncbi.nlm.nih.gov/pubmed/36463884"
             >
-              Swertz & Gini (2022)
-            </a>,
+              Swertz & Gini (2022) </a
+            >,
             <a
               class="text-body-base text-footer-link hover:underline"
               href="https://www.ncbi.nlm.nih.gov/pubmed/30165396"
@@ -118,9 +119,8 @@ function setAnalyticsCookie(value: boolean) {
 
 let themeFilename = "styles";
 if (route.query.theme) {
-  themeFilename += `.${ route.query.theme }`;
-}
-else if (config.public.emx2Theme) {
+  themeFilename += `.${route.query.theme}`;
+} else if (config.public.emx2Theme) {
   themeFilename += `.${config.public.emx2Theme}`;
 }
 
