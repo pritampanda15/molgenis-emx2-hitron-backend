@@ -1,0 +1,56 @@
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+adminPassword: admin
+image:
+  repository: "molgenis/molgenis-emx2"
+  tag: "latest"
+  pullPolicy: Always
+
+database:
+  name: molgenis
+  username: molgenis
+  password: molgenis
+
+oidc:
+  enabled: false
+#  client_id:
+#  client_secret:
+#  client_name: "MolgenisAuth"
+#  discovery_url: "https://auth.molgenis.org/.well-known/openid-configuration/"
+#  callback_url:
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+     - host: emx2.dev.molgenis.org
+  path: /
+
+postgres:
+  image:
+    repository: postgres
+    tag: 14-alpine
+    pullPolicy: IfNotPresent
+  username: postgres
+  password: postgres
+  database: postgres
+
+catalogue:
+  includeCatalogueDemo: false
+
+ssrCatalogue:
+  image:
+    repository: molgenis/ssr-catalogue-snapshot
+    tag: latest
+    pullPolicy: IfNotPresent
+  environment:
+    apiBase: ""
+    theme: ""
+    logo: ""
+    siteTitle: "Data catalogue"
+    analyticsKey: "6005657"

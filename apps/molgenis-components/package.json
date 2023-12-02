@@ -1,0 +1,55 @@
+{
+  "name": "molgenis-components",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/molgenis-components.umd.js",
+  "module": "./dist/molgenis-components.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/molgenis-components.es.js",
+      "require": "./dist/molgenis-components.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "scripts": {
+    "dev": "cross-env CLEAR_GEN_FOLDERS=on vite",
+    "build": "cross-env SHOW_CASE=off vite build",
+    "build-showcase": "cross-env SHOW_CASE=on vite build ",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test-ci": "vitest run",
+    "coverage": "vitest run --coverage",
+    "format": "prettier src  --write --config ../.prettierrc.js",
+    "checkFormat": "prettier src  --check --config ../.prettierrc.js"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@popperjs/core": "2.11.8",
+    "@vueuse/core": "10.5.0",
+    "@vueuse/integrations": "10.5.0",
+    "axios": "1.6.2",
+    "click-outside-vue3": "4.0.1",
+    "cross-env": "7.0.3",
+    "meta-data-utils": "*",
+    "universal-cookie": "4.0.4",
+    "vue": "3.3.8",
+    "vue-gtag": "2.0.1",
+    "vue-flatpickr-component": "11.0.3",
+    "vue3-cookies": "^1.0.6",
+    "vuedraggable": "4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "4.4.1",
+    "prettier": "2.8.8",
+    "vite": "4.3.9",
+    "vitest": "0.34.6",
+    "vue-router": "4.2.5",
+    "vue-scrollto": "2.20.0"
+  }
+}
