@@ -25,4 +25,11 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    # Add additional steps as needed
+    - name: Upload Test Report
+      if: failure() # This ensures the report is uploaded only if the previous steps fail
+      uses: actions/upload-artifact@v2
+      with:
+       name: Test Reports
+       path: |
+        backend/molgenis-emx2-sql/build/reports/tests/test/
+
